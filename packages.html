@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages - Velavaa Tours</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            padding: 150px 5% 50px;
+            text-align: center;
+            background: linear-gradient(rgba(13, 92, 34, 0.8), rgba(13, 92, 34, 0.8)), url('https://images.unsplash.com/photo-1582510003544-4d00b7f7415e') center/cover;
+            color: white;
+        }
+        
+        .filter-bar {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-container">
+            <!-- User to add actual logo.png to images folder -->
+            <img src="images/logo1.png" alt="Velavaa Tours Logo" onerror="this.style.display='none';">
+            <span class="logo-text">Velavaa Tours</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="packages.html" class="active">Packages</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <div class="page-header">
+        <h1>Our Tour Packages</h1>
+        <p>Tailored experiences for every group type.</p>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All (25+ Custom)</button>
+        <button class="filter-btn" data-filter="custom">Custom Package</button>
+        <button class="filter-btn" data-filter="tamilnadu">Tamil Nadu</button>
+        <button class="filter-btn" data-filter="kerala">Kerala</button>
+        <button class="filter-btn" data-filter="karnataka">Karnataka</button>
+        <button class="filter-btn" data-filter="family">Family</button>
+        <button class="filter-btn" data-filter="friends">Friends</button>
+        <button class="filter-btn" data-filter="couple">Couple</button>
+        <button class="filter-btn" data-filter="college">College</button>
+        <button class="filter-btn" data-filter="school">School</button>
+        <button class="filter-btn" data-filter="corporate">Corporate</button>
+    </div>
+
+    <section style="padding-top: 1rem;">
+        <div class="packages-grid" id="packagesContainer">
+            
+            <!-- 1. Ooty - Masinagudi - Mudumalai -->
+            <div class="package-card" data-category="tamilnadu family couple school">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#0d5c22; color:white;">Tamil Nadu</span>
+                    <img src="https://static.wixstatic.com/media/012323_7be29c92ca6d459b95df381c072f09d5~mv2.jpg/v1/fill/w_568,h_320,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/012323_7be29c92ca6d459b95df381c072f09d5~mv2.jpg" alt="Ooty Nilgiris" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Ooty - Masinagudi - Mudumalai</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 3 Days / 2 Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Nilgiri Hills & Sanctuary</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Ooty Masinagudi Mudumalai">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Kodaikanal - Poombarai - Mannavanur -->
+            <div class="package-card" data-category="tamilnadu family couple friends">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#0d5c22; color:white;">Tamil Nadu</span>
+                    <img src="https://kanyakumaritouristplaces.com/wp-content/uploads/2025/06/Kodaikanal.webp" alt="Kodaikanal Lake" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Kodaikanal - Poombarai - Mannavanur</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 3 Days / 2 Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Princess of Hill Stations</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Kodaikanal Poombarai Mannavanur">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Valparai - Top Slip -->
+            <div class="package-card" data-category="tamilnadu friends college corporate">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#0d5c22; color:white;">Tamil Nadu</span>
+                    <img src="https://images.jdmagicbox.com/v2/comp/valparai/g8/9999p4253.4253.240504220259.l9g8/catalogue/valparai-tea-estate-view-valparai-tourist-attraction-N1GkPj9hdb.jpg" alt="Valparai Rainforest" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Valparai - Top Slip</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 2 Days / 1 Night</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Anamalai Tiger Reserve</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Valparai Top Slip">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Theni - Kolukkumalai -->
+            <div class="package-card" data-category="tamilnadu friends college adventure">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#0d5c22; color:white;">Tamil Nadu</span>
+                    <img src="https://www.clubmahindra.com/blog/media/section_images/banner1920-6c1e6e1c21a9817.webp" alt="Kolukkumalai Sunrise" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Theni - Kolukkumalai</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 2 Days / 1 Night</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Highest Tea Estate</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Theni Kolukkumalai">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Megamalai - Kambam -->
+            <div class="package-card" data-category="tamilnadu family couple nature">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#0d5c22; color:white;">Tamil Nadu</span>
+                    <img src="https://www.renghatravels.com/wp-content/uploads/2025/09/hq720.jpg" alt="Megamalai Hills" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Megamalai - Kambam</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 2 Days / 1 Night</span>
+                        <span><i class="fas fa-map-marker-alt"></i> High Wavy Mountains</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Megamalai Kambam">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Thimbam - Thalavadi -->
+            <div class="package-card" data-category="tamilnadu friends college adventure">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#0d5c22; color:white;">Tamil Nadu</span>
+                    <img src="https://content3.jdmagicbox.com/v2/comp/erode/d9/9999px424.x424.220311015855.m1d9/catalogue/dhimbam-view-point-talamalai-erode-tourist-attraction-0b4owyk8p4.jpg" alt="Thimbam Ghats" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Thimbam - Thalavadi</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 2 Days / 1 Night</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Sathyamangalam Forest</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Thimbam Thalavadi">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Yercaud -->
+            <div class="package-card" data-category="tamilnadu family corporate school">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#0d5c22; color:white;">Tamil Nadu</span>
+                    <img src="https://www.hillsandwills.com/blog_images/49430.jpg" alt="Yercaud Hills" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Yercaud Hills Retreat</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 2 Days / 1 Night</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Shevaroy Hills</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Yercaud Hills">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Yelagiri -->
+            <div class="package-card" data-category="tamilnadu family corporate friends">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#0d5c22; color:white;">Tamil Nadu</span>
+                    <img src="https://assets.simplotel.com/simplotel/image/upload/x_0,y_0,w_1499,h_843,r_0,c_crop,q_80,fl_progressive/w_500,f_auto,c_fit/mgm-hotels-resorts/yelagiri_c51500ae" alt="Yelagiri Hills" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Yelagiri Adventure Escape</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 2 Days / 1 Night</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Eastern Ghats</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Yelagiri Adventure">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Kolli Hills -->
+            <div class="package-card" data-category="tamilnadu friends college adventure">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#0d5c22; color:white;">Tamil Nadu</span>
+                    <img src="https://www.hillsandwills.com/blog_images/92436.jpg" alt="Kolli Hills" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Kolli Hills & Agaya Gangai</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 2 Days / 1 Night</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Mountain of 70 Bends</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Kolli Hills">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Madurai - Rameshwaram -->
+            <div class="package-card" data-category="tamilnadu family school corporate">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#0d5c22; color:white;">Tamil Nadu</span>
+                    <img src="https://diplomatvisa.com/wp-content/uploads/2024/12/Best-Tourist-Places-to-Visit-in-Madurai.jpg" alt="Rameshwaram Temple" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Madurai - Rameshwaram</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 3 Days / 2 Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Heritage & Pilgrimage Trail</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Madurai Rameshwaram">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. Kanyakumari - Trivandrum -->
+            <div class="package-card" data-category="tamilnadu kerala family school couple">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#0d5c22; color:white;">Tamil Nadu</span>
+                    <img src="https://www.holidaylandmark.com/blog/wp-content/uploads/2024/06/image-201-1024x576.png" alt="Kanyakumari Coast" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Kanyakumari - Trivandrum</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 3 Days / 2 Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Southernmost Tip & Capital</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Kanyakumari Trivandrum">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12. Tenkasi - Coutralam - Thenmala -->
+            <div class="package-card" data-category="tamilnadu kerala family friends">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#0d5c22; color:white;">Tamil Nadu</span>
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/15/c7/f5/courtallam-main-falls.jpg?w=800&h=800&s=1" alt="Coutralam Falls" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Tenkasi - Coutralam - Thenmala</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 3 Days / 2 Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Spa of South India & Eco-Tour</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Tenkasi Coutralam Thenmala">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 13. Munnar - Kanthaloor - Vattavada -->
+            <div class="package-card" data-category="kerala family couple friends">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#d4af37; color:#0b3d4f;">Kerala</span>
+                    <img src="https://i.ytimg.com/vi/4WCO8Bk0aes/maxresdefault.jpg" alt="Munnar Tea Gardens" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Munnar - Kanthaloor - Vattavada</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 4 Days / 3 Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Tea Plantations & Orchards</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Munnar Kanthaloor Vattavada">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 14. Vagamon - Thekkady - Idukki -->
+            <div class="package-card" data-category="kerala family friends college">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#d4af37; color:#0b3d4f;">Kerala</span>
+                    <img src="https://www.keralatourism.org/_next/image/?url=https%3A%2F%2Fik.imagekit.io%2Fxsnlqng4k%2FYoutubeImages%2Ftr%3Aw-1920%2Ch-1080%2Fvi%2Fxk-XhUnsQNc%2Fmaxresdefault.jpg&w=1920&q=75" alt="Vagamon Meadows" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Vagamon - Thekkady - Idukki</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 4 Days / 3 Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Pine Forests & Spice Hills</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Vagamon Thekkady Idukki">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 15. Trivandrum - Varkala -->
+            <div class="package-card" data-category="kerala couple friends college">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#d4af37; color:#0b3d4f;">Kerala</span>
+                    <img src="https://t4.ftcdn.net/jpg/05/58/87/41/360_F_558874150_UBXtzzXkvbVgno5GYNAftE3BT9B6mqV9.jpg" alt="Varkala Cliff Beach" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Trivandrum - Varkala Cliff Beach</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 3 Days / 2 Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Coastal Cliffs & Culture</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Trivandrum Varkala">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 16. Wayanad - Kalpetta - Sultan Bathery -->
+            <div class="package-card" data-category="kerala family friends college corporate">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#d4af37; color:#0b3d4f;">Kerala</span>
+                    <img src="https://t4.ftcdn.net/jpg/01/96/43/31/360_F_196433140_3yS0oPVgJDCuLFVveNEyWQfi4A5udqCX.jpg" alt="Wayanad Hills" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Wayanad - Kalpetta - Sultan Bathery</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 3 Days / 2 Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Caves, Waterfalls & Wilderness</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Wayanad Kalpetta Sultan Bathery">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 17. Kakkadampoyil - Kozhikode -->
+            <div class="package-card" data-category="kerala family friends">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#d4af37; color:#0b3d4f;">Kerala</span>
+                    <img src="https://t3.ftcdn.net/jpg/08/54/92/88/360_F_854928803_WoWkGmvVak2W03bf2swM9HkoK25Tzg29.jpg" alt="Malabar Coast & Hills" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Kakkadampoyil - Kozhikode</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 3 Days / 2 Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Malabar Hills & Culinary Coast</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Kakkadampoyil Kozhikode">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 18. Cochin - Alappuzha (Alleppey) -->
+            <div class="package-card" data-category="kerala family couple corporate">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#d4af37; color:#0b3d4f;">Kerala</span>
+                    <img src="https://t4.ftcdn.net/jpg/09/11/95/55/360_F_911955518_20EcRQNxYLylA4Nll2Lrft11MAAxzoAI.jpg" alt="Alleppey Houseboat" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Cochin - Alappuzha Houseboat</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 3 Days / 2 Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Backwaters & Colonial Forts</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Cochin Alappuzha">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 19. Palakkad - Thrissur - Guruvayoor -->
+            <div class="package-card" data-category="kerala family school corporate">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#d4af37; color:#0b3d4f;">Kerala</span>
+                    <img src="https://keralatourism.travel/images/v2/packages/destinations-palakkad-tourism.jpg" alt="Kerala Heritage & Temples" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Palakkad - Thrissur - Guruvayoor</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 3 Days / 2 Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Cultural Capital & Divine Trail</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Palakkad Thrissur Guruvayoor">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 20. Mysore - Coorg - Madikeri -->
+            <div class="package-card" data-category="karnataka family couple corporate">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#1a5276; color:white;">Karnataka</span>
+                    <img src="https://tiimg.tistatic.com/fp/1/009/825/coorg-tour-1n-2d-2-days-travel-services-568.jpg" alt="Mysore Coorg" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Mysore - Coorg - Madikeri</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 4 Days / 3 Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Royal Heritage & Scotland of India</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Mysore Coorg Madikeri">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 21. Chikkamagalur - Netravati -->
+            <div class="package-card" data-category="karnataka friends college adventure">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#1a5276; color:white;">Karnataka</span>
+                    <img src="https://res.cloudinary.com/dyiffrkzh/image/upload/c_fill,f_auto,fl_progressive.strip_profile,g_center,h_400,q_auto,w_700/v1723813541/banbanjara/dsbeqpmioly0dufidkvb.webp" alt="Chikkamagalur Peak Trek" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Chikkamagalur - Netravati Trek</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 3 Days / 2 Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Coffee Land & Cloud Treks</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Chikkamagalur Netravati">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 22. Mangalore - Kollur - Udupi -->
+            <div class="package-card" data-category="karnataka family school couple">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#1a5276; color:white;">Karnataka</span>
+                    <img src="https://www.fabhotels.com/blog/wp-content/uploads/2019/06/Places-to-Visit-in-Mangaluru_600.jpg:cf-webp:w-450:h-240" alt="Udupi Beach & Temples" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Mangalore - Kollur - Udupi</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 3 Days / 2 Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Coastal Temples & Pristine Beaches</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Mangalore Kollur Udupi">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 23. Gokarna - Dandeli - Murudeshwar -->
+            <div class="package-card" data-category="karnataka friends college adventure couple">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#1a5276; color:white;">Karnataka</span>
+                    <img src="https://s7ap1.scene7.com/is/image/incredibleindia/1-om-beach-gokarna-karnataka-city-hero?qlt=82&ts=1726720866389" alt="Gokarna Beach & Dandeli Rafting" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Gokarna - Dandeli - Murudeshwar</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 4 Days / 3 Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> River Rafting, Beaches & Shiva Statue</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Gokarna Dandeli Murudeshwar">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 24. Shimoga - Hampi -->
+            <div class="package-card" data-category="karnataka family school college corporate">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:#1a5276; color:white;">Karnataka</span>
+                    <img src="https://www.alkofholidays.com/storage/image-gallery/jog-falls-shimoga-tour-packages.jpg" alt="Hampi Heritage Ruins" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Shimoga - Hampi Heritage Trail</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> 4 Days / 3 Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Jog Falls & UNESCO World Heritage</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari & Entry Tickets.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Travel</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Shimoga Hampi">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Tour Package (Last in Grid) -->
+            <div class="package-card" data-category="custom tamilnadu kerala karnataka family friends couple college school corporate" style="border: 2px dashed var(--secondary-color); background: linear-gradient(135deg, var(--glass-bg), rgba(212, 175, 55, 0.15));">
+                <div class="package-img-container">
+                    <span class="package-badge" style="background:var(--secondary-color); color:var(--text-dark);">100% Customizable</span>
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Custom South India Tour" class="package-img">
+                </div>
+                <div class="package-content">
+                    <h3>Custom Tour Package</h3>
+                    <div class="package-details">
+                        <span><i class="far fa-clock"></i> Flexible Days & Nights</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Your Choice of Destinations</span>
+                    </div>
+                    <p><strong>Package Includes:</strong> Travel, Food, Accommodation, Jeep Safari, Entry Tickets & Tailor-made Routing.</p>
+                    <div class="full-desc" style="display:none;">
+                        <strong style="color: var(--primary-color); font-size: 1.1rem; display: block; margin-bottom: 12px;">Package Inclusions:</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Personalized Travel & Routing</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Authentic Regional Food</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Premium Accommodation</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> Jeep Safari & Sightseeing</li>
+                            <li style="margin-bottom: 10px; font-size: 1.05rem;"><i class="fas fa-check-circle" style="color: #0d5c22; margin-right: 10px;"></i> All Entry Tickets</li>
+                        </ul>
+                    </div>
+                    <div class="package-footer">
+                        <div class="price" style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 600;">Price on Request</div>
+                        <a href="#" class="btn btn-primary book-wa-btn" style="padding: 8px 20px;" data-package="Custom Tour Package">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Package CTA -->
+        <div style="background: var(--primary-color); color: white; border-radius: 20px; padding: 3rem 2rem; text-align: center; margin-top: 4rem; box-shadow: var(--shadow-lg);">
+            <h2 style="color: var(--secondary-color); margin-bottom: 1rem;">Looking for a Custom Package?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Can't find exactly what you're looking for? We can tailor a trip to your specific needs, budget, and group size.</p>
+            <a href="#" class="btn btn-primary book-wa-btn" data-package="Custom Tour Package" style="font-size: 1.1rem; padding: 12px 40px;"><i class="fab fa-whatsapp"></i> Contact Us on WhatsApp</a>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Velavaa Tours</h4>
+                <p>Your trusted partner for memorable South Indian adventures.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><a href="tel:+919791484012" style="color: inherit; text-decoration: none;"><i class="fas fa-phone"></i> +91 97914 84012</a></li>
+                    <li><a href="mailto:velavaagroups@gmail.com" style="color: inherit; text-decoration: none;"><i class="fas fa-envelope"></i> velavaagroups@gmail.com</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> South India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Velavaa Tours. Designed by FYNFO - Pondicherry</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Icon -->
+    <a href="#" class="whatsapp-float book-wa-btn" data-package="General Inquiry" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Filter Logic for Packages Page
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filterValue = btn.getAttribute('data-filter');
+                const cards = document.querySelectorAll('.package-card');
+                
+                cards.forEach(card => {
+                    const cat = card.getAttribute('data-category') || '';
+                    if (filterValue === 'all' || cat.includes(filterValue)) {
+                        card.style.display = 'flex'; // our cards use flex direction column
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

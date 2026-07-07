@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Velavaa Tours</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            padding: 150px 5% 50px;
+            text-align: center;
+            background: linear-gradient(rgba(13, 92, 34, 0.9), rgba(13, 92, 34, 0.9)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957') center/cover;
+            color: white;
+        }
+
+        .review-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            padding: 4rem 5%;
+        }
+
+        .reviews-list {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .review-form-container {
+            flex: 1;
+            min-width: 300px;
+            background: var(--glass-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .review-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 1.5rem;
+            transition: transform var(--transition-speed);
+        }
+
+        .review-item:hover {
+            transform: translateX(10px);
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .reviewer-name h4 {
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        .reviewer-name span {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            font-size: 2rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s;
+            padding: 0 2px;
+        }
+
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-container">
+            <!-- User to add actual logo.png to images folder -->
+            <img src="images/logo1.png" alt="Velavaa Tours Logo" onerror="this.style.display='none';">
+            <span class="logo-text">Velavaa Tours</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="reviews.html" class="active">Reviews</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <div class="page-header">
+        <h1>Traveler Reviews <span id="reviewCountBadge" class="package-badge" style="background:#0d5c22; color:white; font-size:1.1rem; vertical-align:middle; margin-left:10px; display:inline-block; padding: 4px 14px;">0 Reviews</span></h1>
+        <p>See what our guests say about their South Indian experience.</p>
+    </div>
+
+    <div class="review-layout">
+        <div class="reviews-list" id="reviewsContainer">
+            <!-- Reviews will be dynamically rendered here from js/main.js -->
+        </div>
+
+        <div class="review-form-container">
+            <h3>Write a Review</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 1.5rem; color: #666;">Share your experience with Velavaa Tours.</p>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label>Rating</label>
+                    <div class="star-rating">
+                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" class="fas fa-star"></label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" class="fas fa-star"></label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" class="fas fa-star"></label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" class="fas fa-star"></label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" class="fas fa-star"></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="reviewerName" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label>Package Booked</label>
+                    <input type="text" id="reviewPackage" placeholder="e.g. Ooty Getaway">
+                </div>
+                <div class="form-group">
+                    <label>Your Review</label>
+                    <textarea id="reviewText" rows="4" required placeholder="Tell us about your trip..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Velavaa Tours</h4>
+                <p>Your trusted partner for memorable South Indian adventures with authentic hospitality and unmatched safety.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><a href="tel:+919791484012" style="color: inherit; text-decoration: none;"><i class="fas fa-phone"></i> +91 97914 84012</a></li>
+                    <li><a href="mailto:velavaagroups@gmail.com" style="color: inherit; text-decoration: none;"><i class="fas fa-envelope"></i> velavaagroups@gmail.com</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> South India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Velavaa Tours. Designed by FYNFO - Pondicherry</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Icon -->
+    <a href="#" class="whatsapp-float book-wa-btn" data-package="General Inquiry" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

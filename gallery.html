@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Velavaa Tours</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .gallery-header {
+            padding: 150px 5% 50px;
+            text-align: center;
+            background: linear-gradient(rgba(13, 92, 34, 0.9), rgba(13, 92, 34, 0.9)), url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944') center/cover;
+            color: white;
+        }
+        
+        /* High-performance CSS Grid for large galleries */
+        .mass-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-auto-rows: 200px;
+            gap: 10px;
+            padding: 2rem 5%;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            background-color: #eee;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3rem;
+            opacity: 0.8;
+            pointer-events: none;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* Make some items span 2 rows/cols for visual interest */
+        .item-large { grid-column: span 2; grid-row: span 2; }
+        .item-wide { grid-column: span 2; }
+        .item-tall { grid-row: span 2; }
+        
+        @media (max-width: 768px) {
+            .mass-gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                grid-auto-rows: 140px;
+            }
+            .item-large { grid-column: span 1; grid-row: span 1; }
+            .item-wide { grid-column: span 1; }
+            .item-tall { grid-row: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo-container">
+            <!-- User to add actual logo.png to images folder -->
+            <img src="images/logo1.png" alt="Velavaa Tours Logo" onerror="this.style.display='none';">
+            <span class="logo-text">Velavaa Tours</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <div class="gallery-header">
+        <h1>Our 800+ Media Vault</h1>
+        <p>Explore hundreds of HD photos and videos captured across South India. To ensure lightning-fast website performance and seamless mobile loading, our complete uncompressed media archive is hosted securely on our official Google Drive.</p>
+    </div>
+
+    <!-- Google Drive Cloud Vault Section -->
+    <section style="padding: 4rem 5%; background: linear-gradient(135deg, var(--glass-bg), rgba(212, 175, 55, 0.08)); border-bottom: 1px solid var(--border-color);">
+        <div style="max-width: 1000px; margin: 0 auto; text-align: center; margin-bottom: 2.5rem;">
+            <h2 style="font-size: 2.2rem; color: var(--primary-color); margin-bottom: 1rem;"><i class="fab fa-google-drive" style="color: #0F9D58; margin-right: 10px;"></i> Access Our Official Cloud Vaults</h2>
+            <p style="font-size: 1.1rem; color: var(--text-dark);">Click below to open our organized Google Drive folders and experience our full high-definition tour gallery instantly without slow site loading speeds!</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; max-width: 1000px; margin: 0 auto;">
+            <!-- Images Vault Card -->
+            <div style="background: white; padding: 2.5rem 2rem; border-radius: 20px; box-shadow: var(--shadow-lg); text-align: center; border: 2px solid #0F9D58; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 3.5rem; color: #0F9D58; margin-bottom: 1.5rem;"><i class="fas fa-images"></i></div>
+                <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem;">800+ Tour Photos Vault</h3>
+                <p style="color: #666; margin-bottom: 2rem; font-size: 0.95rem; line-height: 1.6;">Browse full-resolution photos of Ooty, Kodaikanal, Munnar, Coorg, Hampi, Wayanad, and our happy travelers enjoying their scenic trips across South India.</p>
+                <a href="https://drive.google.com/drive/folders/1FfBeWebgE-EDcpRNb-hc9i1dr_JyKNns?usp=sharing" target="_blank" class="btn btn-primary" style="display: block; width: 100%; padding: 14px 20px; font-size: 1.05rem; background: #0F9D58; border-color: #0F9D58;"><i class="fab fa-google-drive"></i> Open Photo Gallery &rarr;</a>
+            </div>
+
+            <!-- Videos Vault Card -->
+            <div style="background: white; padding: 2.5rem 2rem; border-radius: 20px; box-shadow: var(--shadow-lg); text-align: center; border: 2px solid #4285F4; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 3.5rem; color: #4285F4; margin-bottom: 1.5rem;"><i class="fas fa-video"></i></div>
+                <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem;">HD Tour Videos & Safaris</h3>
+                <p style="color: #666; margin-bottom: 2rem; font-size: 0.95rem; line-height: 1.6;">Watch thrilling Jeep safari adventures, misty mountain drives, waterfall treks, and genuine customer video testimonials in crisp HD video quality.</p>
+                <a href="https://drive.google.com/drive/folders/1zAlR6OsmbvImVkCvpzMWNuqcN8gwDyxr?usp=sharing" target="_blank" class="btn btn-primary" style="display: block; width: 100%; padding: 14px 20px; font-size: 1.05rem; background: #4285F4; border-color: #4285F4;"><i class="fab fa-google-drive"></i> Open Video Gallery &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curated Destination Previews -->
+    <section style="padding: 4rem 5%;">
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+            <h2 style="font-size: 2rem; color: var(--primary-color);">Featured South India Highlights</h2>
+            <p style="color: #666;">A sneak peek of the destinations awaiting you. Click any photo to enlarge or enquire.</p>
+        </div>
+        <div class="mass-gallery-grid" id="galleryContainer">
+            <!-- 12 Lightweight CDN Previews (0 MB Local File Size) -->
+            <div class="gallery-item item-large">
+                <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80" alt="Munnar Tea Gardens" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80" alt="Meenakshi Temple Madurai" loading="lazy">
+            </div>
+            <div class="gallery-item item-tall">
+                <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=600&q=80" alt="Kerala Houseboat Backwaters" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=600&q=80" alt="Ooty Nilgiri Mountains" loading="lazy">
+            </div>
+            <div class="gallery-item item-wide">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Kodaikanal Lake Mist" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=600&q=80" alt="Rameshwaram Coast" loading="lazy">
+            </div>
+            <div class="gallery-item item-tall">
+                <img src="https://s7ap1.scene7.com/is/image/incredibleindia/1-om-beach-gokarna-karnataka-city-hero?qlt=82&ts=1726720866389" alt="Gokarna Beach Karnataka" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://tiimg.tistatic.com/fp/1/009/825/coorg-tour-1n-2d-2-days-travel-services-568.jpg" alt="Coorg Scotland of India" loading="lazy">
+            </div>
+            <div class="gallery-item item-wide">
+                <img src="https://wanderon-images.gumlet.io/gallery/new/2025/09/23/1758628628124-kerala-wayanad.jpg?auto=compress%2Cformat&w=768" alt="Wayanad Misty Hills" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80" alt="Jeep Safari Adventure" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80" alt="Valparai Forest Road" loading="lazy">
+            </div>
+            <div class="gallery-item item-large">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Kanyakumari Sunset" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Icon -->
+    <a href="#" class="whatsapp-float book-wa-btn" data-package="General Inquiry" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Velavaa Tours</h4>
+                <p>Your trusted partner for memorable South Indian adventures with authentic hospitality and unmatched safety.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><a href="tel:+919791484012" style="color: inherit; text-decoration: none;"><i class="fas fa-phone"></i> +91 97914 84012</a></li>
+                    <li><a href="mailto:velavaagroups@gmail.com" style="color: inherit; text-decoration: none;"><i class="fas fa-envelope"></i> velavaagroups@gmail.com</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> South India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Velavaa Tours. Designed by FYNFO - Pondicherry</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Icon -->
+    <a href="#" class="whatsapp-float book-wa-btn" data-package="General Inquiry" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>
